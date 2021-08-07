@@ -1,0 +1,16 @@
+version: "3"
+services:
+  services_name_1:
+   image: mongo
+   ports:
+    - 27333:27017
+   environment:
+    - MONGO_INITDB_ROOT_USERNAME=admin
+    - MONGO_INITDB_ROOT_PASSWORD=pass
+
+
+  services_name_app:
+   build: Dockerfile
+   ports:
+    - 9090:8080
+   image: my-spring-boot-app.jar
